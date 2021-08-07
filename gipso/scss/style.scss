@@ -1,0 +1,746 @@
+/*fonts*/
+@font-face {
+   font-family: "ProximaNova_reg";
+   src: url("../fonts/ProximaNova-Regular.woff2") format("woff2"),
+      url("../fonts/ProximaNova-Regular.woff") format("woff"),
+      url("../fonts/ProximaNova-Regular.svg#ProximaNova-Regular") format("svg");
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: "ProximaNova_bold";
+   src: url("../fonts/ProximaNova-Bold.woff2") format("woff2"), url("../fonts/ProximaNova-Bold.woff") format("woff"),
+      url("../fonts/ProximaNova-Bold.svg#ProximaNova-Bold") format("svg");
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
+}
+@mixin reg {
+   font-family: "ProximaNova_reg", sans-serif;
+}
+@mixin bold {
+   font-family: "ProximaNova_bold", sans-serif;
+}
+/*colors*/
+$btn-color: #fcb303;
+$icons-color: #46b814;
+$text: #1a1820;
+$danger: #ff0000;
+$bg-light: #f5f5f5;
+$light: #fff;
+$border-input: #dddddd;
+$problems-color: #e8e8e8;
+$upssell:#286b0a;
+
+/*basic settings*/
+html {
+   font-size: 10px;
+}
+body {
+   @include reg;
+}
+
+a {
+   &:hover {
+      text-decoration: none;
+   }
+}
+button,
+input,
+a,
+textarea {
+   &:focus {
+      outline: none;
+   }
+}
+.button {
+   padding: 1rem 3rem;
+   border-radius: 8px;
+   font-size: 1.2rem;
+   background-color: $btn-color;
+   color: $light;
+   text-transform: uppercase;
+   border: none;
+   transition: all 0.2s;
+   &:hover {
+      cursor: pointer;
+      background-color: $icons-color;
+   }
+}
+// Оформление форм
+.form {
+   // Поле для ввода
+   &-input, &-textarea {
+      display: block;
+      margin: 2rem 0;
+      border: 1px solid $border-input;
+      border-radius: 5px;
+      width: 100%;
+      padding: 1.5rem;
+   }
+   // Подпись к полям
+   label {
+      position: absolute;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      background-color: $light;
+      font-size: 1.3rem;
+      padding: 0.5rem;
+   }
+   // Кнопка отправить заявку
+   &-btn {
+      display: block;
+      height: 5.5rem;
+      width: 100%;
+      font-size: 1.6rem;
+   }
+}
+
+// Типографика
+section {
+   padding: 10rem;
+}
+.section-header {
+   margin: 2rem 0 10rem;
+   text-align: center;
+   &_light {
+      color: $light;
+   }
+   h2,
+   h4 {
+      @include bold;
+      font-size: 3.6rem;
+   }
+   p {
+      font-size: 1.4rem;
+   }
+}
+.main {
+   padding: 3rem 0;
+   background: url(../img/gipsolit.png) center center no-repeat;
+   background-size: cover;
+   &-content {
+      margin-top: 10rem;
+      h1 {
+         margin-top: 0;
+         margin-bottom: 4rem;
+         @include bold;
+         font-size: 4rem;
+         line-height: 1.45;
+         text-transform: uppercase;
+      }
+   }
+   &-subtitle {
+      margin-bottom: 4rem;
+      font-size: 2.4rem;
+   }
+   span {
+      display: inline-block;
+      padding: 4rem 6rem;
+      font-size: 1.8rem;
+      color: $light;
+      background: $icons-color;
+      text-align: center;
+      strong {
+         font-size: 3rem;
+         @include bold;
+      }
+   }
+   &-trigger {
+      display: block;
+      margin-top: 3rem;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      @include bold;
+   }
+   &-form {
+      padding: 4rem 5rem;
+      background-color: $light;
+      text-align: center;
+      &-header {
+         margin-bottom: 4rem;
+         font-size: 1.8rem;
+         strong {
+            font-size: 1.9rem;
+         }
+      }
+      small {
+         display: block;
+         margin-top: 1.5rem;
+      }
+   }
+}
+//выравние кнопки в header по середине в правом углу
+.header {
+   height: 7rem;
+}
+.wrap {
+   display: table;
+   width: 100%;
+   height: 7rem;
+   &-block {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+   }
+}
+//Выравнивание номера телефона
+.phone-link {
+   display: inline-block;
+   text-align: center;
+   @include bold;
+   font-weight: 900;
+   font-size: 2rem;
+   height: 7rem;
+   line-height: 7rem;
+   color: $text;
+}
+// Блок с преимуществами
+.features {
+   &-block {
+      display: inline-block; /* Блочный элемент (для старых браузеров) */
+      text-align: center; /* Выравнивание по центру */
+      margin-top: 0px; /* Отступ сверху */
+      margin-left: 50px;
+      margin-bottom: 5px; /* Отступ снизу */
+      h3 {
+         font-size: 2rem;
+         @include bold;
+      }
+      p {
+         display: inline-block;
+         font-size: 1.6rem;
+         width: 65%;
+      }
+   }
+   img {
+      display: block;
+      text-align: center;
+      height: 8rem;
+      padding-left: 85px;
+      margin-bottom: 3rem;
+      img {
+         display: block;
+         margin: 0 auto;
+      }
+   }
+}
+// Работа со слайдером, создаем стрелки для слайдера
+.slick-active {
+   outline: none;
+}
+.arrow {
+   top: 50%;
+   transform: scaleX(1);
+   position: absolute;
+   width: 4rem;
+   height: 4rem;
+   border: none;
+   z-index: 99;
+}
+.prev {
+   left: 0;
+   background: url(../img/left_arrow.svg) center no-repeat;
+   background-size: 100%;
+}
+.next {
+   right: 0;
+   background: url(../img/right_arrow.svg) center no-repeat;
+   background-size: 100%;
+}
+
+// Оформление второй секции с ценами
+.price {
+   background: url(../img/section3-bg.png) center;
+   &-header-btn {
+      margin-top: 2.5rem;
+   }
+   &-button {
+      text-align: right;
+      margin-bottom: 2rem;
+   }
+   &-img {
+      width: 100%;
+      max-width: 30rem;
+      display: inline-block;
+      margin-bottom: 2rem;
+   }
+   &-block {
+      padding: 1rem 3rem 4rem;
+      text-align: center;
+      min-height: 60rem;
+      @include bold;
+      background-color: #fff;
+      .h4 {
+         padding: 55px 0 45px;
+      }
+      .price-button-1 {
+         margin-top: 120px;
+         width: 50%;
+      }
+      .price-button-2 {
+         margin-top: 80px;
+         width: 50%;
+      }
+      .price-button-3 {
+         margin-top: 60px;
+         width: 50%;
+      }
+      img {
+         width: 100%;
+         max-width: 30rem;
+         display: inline-block;
+         margin-bottom: 2rem;
+      }
+   }
+   &-tag {
+      padding: 20px 0 20px;
+      font-size: 2.5rem;
+      @include bold;
+   }
+   &-list {
+      padding: 0;
+      list-style: none;
+      min-height: 10rem;
+      line-height: 1.6rem;
+      li {
+         &::before {
+            content: "";
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            background: url(../img/price/checked.svg) no-repeat center;
+            background-size: 100%;
+            vertical-align: middle;
+         }
+      }
+   }
+}
+// Секция с отзывами
+.feedback {
+   background: url(../img/hand.png) bottom left no-repeat;
+   &-text {
+      position: relative;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border: 2px solid $icons-color;
+      font-style: italic;
+      &::before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: -2rem;
+         left: 4rem;
+         width: 2rem;
+         height: 2rem;
+         background-color: $light;
+         border: 2px solid $icons-color;
+         border-bottom: none;
+         border-top-right-radius: 100px;
+      }
+   }
+   &-prev-btn {
+      left: -4rem;
+   }
+   &-next-btn {
+      right: -4rem;
+   }
+   &-slider {
+      padding: 5rem 6rem;
+      background-color: $light;
+      box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
+      p {
+         font-size: 1.6rem;
+      }
+      .media-object,
+      img {
+         width: 100px;
+         height: 100px;
+      }
+      &-btn {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 4rem;
+         height: 5rem;
+         border: none;
+         img {
+            width: 50%;
+         }
+      }
+   }
+   // Форма обратной связи
+   &-form {
+      margin-top: 4rem;
+      padding: 4rem 7rem;
+      background-color: $light;
+      text-align: center;
+      border: 2px solid $icons-color;
+      h3 {
+         @include bold;
+         font-size: 2rem;
+         margin-bottom: 4rem;
+      }
+   }
+}
+// Оформление схемы
+.scheme {
+   background: url(..//img/bg-hand.jpg) bottom -10rem right -15rem no-repeat;
+   padding-bottom: 0;
+   background-size: 65rem;
+   &-block {
+      min-height: 30rem;
+   }
+   h3 {
+      font-size: 2rem;
+      @include bold;
+   }
+}
+
+// Мы развеем все опасения
+.problems {
+   position: relative;
+   &-women {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 30rem;
+      margin-left: -19%;
+   }
+   &-list {
+      min-height: 35rem;
+      margin-bottom: 2rem;
+      border: 4px solid;
+      padding: 2rem;
+      h4 {
+         font-size: 2rem;
+         @include bold;
+      }
+      ul {
+         list-style: none;
+         padding-left: 0;
+         padding-top: 2rem;
+         li {
+            position: relative;
+            &::before {
+               content: "";
+               position: absolute;
+               left: 0;
+               top: 50%;
+               transform: translateY(-50%);
+               width: 3rem;
+               height: 3rem;
+            }
+            padding-left: 3.5rem;
+            margin-bottom: 2rem;
+         }
+      }
+      &_bad {
+         border-color: $danger;
+         h4 {
+            color: $danger;
+            opacity: 0.5;
+         }
+         ul li::before {
+            background: url(../img/right_arrow.svg) center no-repeat;
+            background-size: 65%;
+         }
+      }
+      &_good {
+         border: 5px solid $icons-color;
+         ul li::before {
+            background: url(../img/left_arrow.svg) center no-repeat;
+            background-size: 65%;
+         }
+      }
+   }
+}
+// Все на 100% вклюено
+
+.all-inclusive {
+   background: $bg-light;
+   .media {
+      min-height: 9rem;
+      h4 {
+         @include bold;
+         font-size: 1.6rem;
+      }
+      p {
+         font-size: 1.1rem;
+      }
+   }
+}
+
+.circle {
+   display: inline-block;
+   width: 100%;
+   height: 100%;
+   background-color: $icons-color;
+   border-radius: 50%;
+   &-border {
+      display: inline-block;
+      width: 5rem;
+      height: 5rem;
+      padding: 0.3rem;
+      border: 2px solid $icons-color;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 4rem;
+      color: $light;
+      @include bold;
+      font-size: 1.9rem;
+   }
+}
+
+// Оформление материалов
+.materials {
+   &-offer {
+      margin-top: 4rem;
+   }
+   &-link {
+      text-align: center;
+      color: $icons-color;
+      border-bottom: 2px dotted $icons-color;
+      &:hover {
+      color: $btn-color;
+      }
+   }
+   &-slider {
+      padding-top: 5rem;
+   }
+   img {
+      display: block;
+      margin: 0 auto;
+   }
+}
+// Посмотрите как мы работаем 
+.tour {
+   background: $light url(../img/debil.png) center no-repeat;
+   background-size: cover;
+   &-subtitle {
+      font-size: 2.2rem;
+   }
+   &-btn {
+      padding: 2rem 2rem;
+   }
+}
+
+// Дополнительные услуги
+.upsell {
+   &-text {
+      @include bold;
+   }
+   background:$upssell ;
+   &-block {
+      &s {
+      margin-top: 3rem;
+      }
+      img {
+         display: inline-block;
+         margin-top: 3rem;
+         margin-bottom: 3rem;
+         width: 100%;
+         min-width: 30rem;
+      }
+      p {
+         font-size: 2rem;
+         margin-bottom: 3rem;
+      }
+      min-height: 30rem;
+      text-align: center;
+      color: $light;
+   }
+}
+
+// Оформление контактов
+.contacs {
+   background: $light url(/img/robot.png) center no-repeat;
+   background-size: cover;
+   &-link {
+      display: inline-block;
+      color: $text;
+      border-bottom: 1px dotted $text;
+      &:hover {
+         color: $btn-color;
+      }
+   }
+   h2{
+      @include bold;
+   }
+   p {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+   }
+   // Заоголовок для формы
+   &-form{
+    h2 {
+      font-size: 1.9rem;
+      @include reg;
+      margin-bottom: 2rem;
+    }
+   }
+}
+
+// footer
+footer {
+   padding: 4rem;
+}
+.footer {
+   &-contacs{
+      text-align: center;
+      padding-top: 0.5rem;
+      p {
+         padding-top: 1rem;
+         margin: 0;
+      }
+   }
+   &-dev-logo {
+      text-align: right;
+   }
+}
+
+// оформление модальных окон
+.popup {
+   display: none;
+   position: fixed;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 9;
+   background-color: rgba(0, 0, 0, 0.5);
+   &-form {
+      margin-top: 3;
+      padding: 0;
+   }
+   &-close {
+      position: absolute;
+      top: -1.5rem;
+      right: -2rem;
+      width: 2rem;
+      text-align: center;
+      border: none;
+      background-color: transparent;
+      font-size: 3rem;
+      color: $light;
+   }
+   &-content {
+      position: fixed;
+      left: 50%;
+      top: 10%;
+      background-color: $light;
+      transform: translateX(-50%);
+      padding: 4.6rem;
+      text-align: center;
+   }
+   &-header {
+      @include bold;
+   }
+}
+// Работа с адаптивом контейнера
+@media (max-width: 1199px) {
+   .feedback {
+      &-form {
+         padding: 3rem 5rem;
+      }
+      .fotorama {
+         margin-bottom: 3rem;
+      }
+   }
+   .all-inclusive {
+      .media {
+         min-height: 11rem;
+      }
+   }
+   .problems {
+      &-list {
+         min-height: 40rem;
+      }
+   }
+}
+
+@media (max-width: 991px) {
+   .main {
+      background-position: top right;
+   }
+   .phone-block {
+      text-align: center;
+   }
+   .main-content {
+      margin-top: 3rem;
+   }
+   .main-title {
+      text-align: center;
+      padding-bottom: 3rem;
+   }
+
+   .price {
+      button {
+         width: 100%;
+         padding: 2rem 0;
+      }
+      &-block {
+         margin-bottom: 2rem;
+      }
+   }
+   .problems {
+      &-list {
+         min-height: auto;
+      }
+      &-women {
+         display: none;
+      }
+   }
+   .tour {
+      background: none;
+      background-color: $bg-light;
+   }
+   .contacs {
+      background: none;
+      background-color: $bg-light;
+      &-form{
+         margin-top: 3rem;
+      }
+   }
+   footer {
+      text-align: center;
+   }
+   .footer {
+      &-contacs {
+      margin: 2rem 0;
+      }
+      &-dev-logo {
+         text-align: center;
+      }
+   }
+}
+@media (max-width: 767) {
+   .main {
+      background-position:top left ;
+      h1{
+         font-size: 2.5rem;
+      }
+      .header {
+         text-align: center;
+      }
+      .wrap {
+         text-align: center;
+      }
+   }
+   .price {
+      button {
+         text-align: center;
+      }
+   }
+   .scheme {
+      background-color: none;
+      text-align: center;
+      &-block {
+         min-height: 20rem;
+      }
+   }
+}
