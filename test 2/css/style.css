@@ -1,0 +1,122 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a.top {
+  bottom: 0;
+}
+
+.header {
+  height: 900px;
+  background: url(/img/bg.png) center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.header_logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 40px;
+  font-size: 20px;
+  color: #0c2d48;
+}
+
+.header .header_card {
+  background-color: #e8eef1;
+  opacity: 0.6;
+  border-radius: 0px 0px 51px 51px;
+  min-width: 370px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .header_card-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 35px auto;
+}
+
+.header .header_card-text {
+  text-align: center;
+  color: #0c2d48;
+  font-size: 26px;
+}
+
+.header_phonelink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 40px;
+  font-size: 16px;
+  color: #0c2d48;
+}
+
+.header_a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50px;
+  margin: 35px auto;
+  text-align: center;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background-color: #d0e5ec;
+  height: 900px;
+}
+
+.about_title {
+  font-size: 48px;
+  font-weight: 700px;
+  padding-top: 50px;
+  color: #0c2d48;
+  padding-bottom: 50px;
+}
+
+.about_text {
+  padding-top: 20px;
+  font-size: 30px;
+  color: #0c2d48;
+}
+
+.trip {
+  height: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background-color: #BFD7ED;
+}
+
+.trip_title {
+  font-size: 48px;
+  font-weight: 700px;
+  padding-top: 120px;
+  color: #0c2d48;
+  padding-bottom: 50px;
+}
+
+.trip_text {
+  padding-top: 20px;
+  font-size: 30px;
+  color: #0c2d48;
+}

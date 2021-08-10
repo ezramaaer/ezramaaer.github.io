@@ -1,0 +1,89 @@
+body {
+   font-family: 'Montserrat', sans-serif;
+}
+html {
+   scroll-behavior: smooth;
+}
+
+a.top {
+   bottom: 0;
+}
+.header {
+   height: 900px;
+   background: url(/img/bg.png) center center no-repeat;
+   background-size: cover;
+   position: relative;
+   &_logo {
+      display: flex;
+      padding-top: 40px;
+      font-size: 20px;
+      color: #0c2d48;
+   }
+   .header_card {
+      background-color: #e8eef1;
+      opacity: 0.6;
+      border-radius: 0px 0px 51px 51px;
+      min-width: 370px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      &-img {
+         display: flex;
+         margin: 35px auto;
+      
+      }
+      &-text {
+         text-align: center;
+         color: #0c2d48;
+         font-size: 26px;
+      }
+   }
+   &_phonelink {
+      display: flex;
+      padding-top: 40px;
+      font-size: 16px;
+      color: #0c2d48;
+   }
+   &_a{
+      display: flex;
+      width: 50px;
+      margin: 35px auto;
+      text-align: center;
+   }
+}
+.about {
+   display: flex;
+   justify-content: start;
+   background-color: #d0e5ec;
+   height: 900px;
+   &_title {
+      font-size: 48px;
+      font-weight: 700px;
+      padding-top: 50px;
+      color: #0c2d48;
+      padding-bottom: 50px;
+   }
+   &_text {
+      padding-top: 20px;
+      font-size: 30px;
+      color: #0c2d48;
+   }
+}
+.trip {
+   height: 900px;
+   display: flex;
+   justify-content: start;
+   background-color: #BFD7ED;
+   &_title {
+      font-size: 48px;
+      font-weight: 700px;
+      padding-top: 120px;
+      color: #0c2d48;
+      padding-bottom: 50px;
+   }
+   &_text {
+      padding-top: 20px;
+      font-size: 30px;
+      color: #0c2d48;
+   }
+}
